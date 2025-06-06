@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore and protect the deep ocean" />
+    <title>DeepOcean</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="icon" href="/src/assets/icon.png" />
+    <script type="module" src="/src/js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>🌊 DeepOcean</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/" data-page="home">Home</a></li>
+          <li><a href="#" data-page="species">Species Explorer</a></li>
+          <li><a href="#" data-page="stats">Ocean Stats</a></li>
+          <li><a href="#" data-page="quiz">Quiz</a></li>
+          <li><a href="#" data-page="favorites">Favorites</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="with-hero">
+      <!-- <section id="home" class="page active hero-section">
+        <div class="hero-overlay">
+          <h2>Welcome to DeepOcean</h2>
+          <p>Explore marine life, learn facts, and protect our oceans.</p>
+        </div>
+      </section> -->
+
+      <section id="stats" class="page hidden"></section>
+      <section id="quiz" class="page hidden"></section>
+      <section id="favorites" class="page hidden">
+        <h2>My Favorites</h2>
+        <div id="favorites-container" class="card-grid"></div>
+      </section>
+
+      <section id="species" class="page hidden species-search">
+        <h2>Explore Marine Species</h2>
+        <form id="species-form">
+          <label for="species-input">Search by name:</label>
+          <input type="text" id="species-input" name="species" required />
+          <button type="submit">Search</button>
+        </form>
+        <div id="species-results" class="results"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; <span id="year"></span> DeepOcean. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+:root {
+  --blue: #013a63;
+  --coral: #ff6b6b;
+  --seafoam: #20c997;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+header {
+  background-color: var(--coral);
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.nav-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+
+.page.hidden {
+  display: none;
+}
+
+footer {
+  background-color: var(--seafoam);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Base styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue);
+  color: #013A63;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #013A63;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #20C997;
+  border-radius: 8px;
+  flex: 1;
+}
+
+button {
+  background-color: #FF6B6B;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e55a5a;
+}
+
+/* Results grid */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.species-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.species-card:hover {
+  transform: translateY(-5px);
+}
+
+.species-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+/* favorites view */
+/* Add to your main CSS file */
+.favorite-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.favorite-card h3 {
+  margin-top: 0;
+}
+
+.favorite-card button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.favorite-card button:hover {
+  background-color: #d94a4a;
+}
+
+.hero-section {
+  position: relative;
+  background: url('../images/ocean.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+header,
+footer {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  color: white;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  text-align: center;
+}
+
+.with-hero {
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    url('../images/ocean.jpg') no-repeat center center / cover;
+  min-height: 100vh;
+  padding-top: 10rem; /* para dejar espacio al header */
+  padding-bottom: 5rem; /* para que el footer no quede encima */
+  color: var(--blue);
+}
+
+/* Opcional: aplicar efecto de fondo fijo */
+.with-hero {
+  background-attachment: fixed;
+}
+
+.species-search{
+  margin-top: 35px;
+  padding-left: 5px;
+}
+
