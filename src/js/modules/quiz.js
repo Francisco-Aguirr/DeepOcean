@@ -1,3 +1,5 @@
+import quizData from '../../data/quizData.json';
+
 export default function setupQuiz() {
   const container = document.getElementById('quiz-container');
   const resultBox = document.getElementById('quiz-results');
@@ -9,7 +11,6 @@ export default function setupQuiz() {
   let score = 0;
   let questions = [];
   let quizInProgress = false;
-  let allQuestions = []; // Almacenar todas las preguntas disponibles
   const quizLength = 10;
 
   // Shuffle array function
@@ -27,31 +28,11 @@ export default function setupQuiz() {
     return shuffleArray([...questions]).slice(0, count);
   }
 
-  async function loadAllQuestions() {
-    try {
-      const res = await fetch('/src/data/quizData.json');
-      if (!res.ok) throw new Error('Failed to load quiz data');
-      const data = await res.json();
-      allQuestions = data.questions;
-      startNewQuiz();
-    } catch (error) {
-      console.error("Error loading questions:", error);
-      container.innerHTML = `
-        <div class="error-card">
-          <h3>Error Loading Quiz</h3>
-          <p>${error.message}</p>
-          <button id="retry-load">Retry</button>
-        </div>
-      `;
-      document.getElementById('retry-load').addEventListener('click', loadAllQuestions);
-    }
-  }
-
   function startNewQuiz() {
     quizInProgress = true;
     currentQuestion = 0;
     score = 0;
-    questions = selectRandomQuestions(allQuestions, quizLength);
+    questions = selectRandomQuestions(quizData.questions, quizLength);
     quizTitle.textContent = `Ocean Quiz (${quizLength} Questions)`;
     container.classList.remove('hidden');
     resultBox.classList.add('hidden');
@@ -127,11 +108,9 @@ export default function setupQuiz() {
     `;
   }
 
-  // Configurar el botón de reinicio correctamente
-  restartBtn.addEventListener('click', () => {
-    startNewQuiz();
-  });
+  // Configurar el botón de reinicio
+  restartBtn.addEventListener('click', startNewQuiz);
 
-  // Inicializar cargando todas las preguntas primero
-  loadAllQuestions();
+  // Inicializar el quiz directamente con los datos importados
+  startNewQuiz();
 }
