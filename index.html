@@ -6,32 +6,93 @@
     <meta name="description" content="Explore and protect the deep ocean" />
     <title>DeepOcean</title>
     <link rel="stylesheet" href="./src/styles/styles.css" />
-    <link rel="icon" href="/src/assets/icon.png" />
+    <link rel="icon" href="./src/images/turtle-removebg.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script type="module" src="/src/js/main.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>🌊 DeepOcean</h1>
+      <div class="logo-container">
+        <img
+          src="./src/images/turtle-removebg.png"
+          alt="DeepOcean Logo"
+          class="logo-img"
+        />
+        <h1>DeepOcean</h1>
+      </div>
       <nav>
         <ul class="nav-menu">
           <li><a href="/" data-page="home">Home</a></li>
-          <li><a href="#" data-page="species">Species Explorer</a></li>
-          <li><a href="#" data-page="stats">Ocean Stats</a></li>
+          <li><a href="#" data-page="species">Species</a></li>
+          <li><a href="#" data-page="stats">Stats</a></li>
           <li><a href="#" data-page="quiz">Quiz</a></li>
           <li><a href="#" data-page="favorites">Favorites</a></li>
         </ul>
       </nav>
     </header>
     <main id="main-content" class="with-hero">
-      <!-- <section id="home" class="page active hero-section">
-        <div class="hero-overlay">
-          <h2>Welcome to DeepOcean</h2>
-          <p>Explore marine life, learn facts, and protect our oceans.</p>
-        </div>
-      </section> -->
+      <section id="home" class="page active hero-section">
+        <div class="hero-overlay animate__animated animate__fadeIn">
+          <h2 class="animate__animated animate__fadeInDown">
+            Welcome to DeepOcean
+          </h2>
+          <p class="animate__animated animate__fadeIn animate__delay-1s">
+            Explore marine life, learn facts, and protect our oceans.
+          </p>
 
-      <section id="stats" class="page hidden"></section>
-      <section id="quiz" class="page hidden"></section>
+          <div
+            class="cta-container animate__animated animate__fadeInUp animate__delay-2s"
+          >
+            <button class="cta-button" data-page="species">
+              Explore Species
+            </button>
+            <button class="cta-button secondary" data-page="quiz">
+              Take Ocean Quiz
+            </button>
+          </div>
+
+          <div
+            class="ocean-facts animate__animated animate__fadeIn animate__delay-3s"
+          >
+            <div class="fact-card">
+              <h3>🌊 Did You Know?</h3>
+              <p class="fact-text">The ocean covers 71% of Earth's surface</p>
+              <button class="fact-next">Next Fact</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Burbujas animadas para efecto submarino -->
+        <div class="bubbles">
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+        </div>
+      </section>
+
+      <section id="stats" class="page hidden">
+        <h2>Ocean Stats</h2>
+        <div id="stats-container" class="card-grid"></div>
+      </section>
+      <section id="quiz" class="page hidden">
+        <h2>Ocean Quiz</h2>
+        <div id="quiz-container" class="card-grid">
+          <!-- Quiz content will be injected here -->
+        </div>
+        <div id="quiz-results" class="hidden">
+          <h3>Results</h3>
+          <p id="score"></p>
+          <button id="restart-quiz">Try Again</button>
+        </div>
+      </section>
       <section id="favorites" class="page hidden">
         <h2>My Favorites</h2>
         <div id="favorites-container" class="card-grid"></div>
@@ -41,7 +102,13 @@
         <h2>Explore Marine Species</h2>
         <form id="species-form">
           <label for="species-input">Search by name:</label>
-          <input type="text" id="species-input" name="species" required />
+          <input
+            type="text"
+            id="species-input"
+            name="species"
+            required
+            placeholder="Ex: 'fish'"
+          />
           <button type="submit">Search</button>
         </form>
         <div id="species-results" class="results"></div>

@@ -2,35 +2,31 @@
 
 import FavoritesView from './favoritesView.js';
 
-export function initNavigation() {
-  const links = document.querySelectorAll('nav a[data-page]');
-  const pages = document.querySelectorAll('.page');
-  const favoritesView = new FavoritesView('#favorites-container'); // Pointing to the section, not container
-
-  links.forEach(link => {
+// navigation.js (ejemplo de modificación)
+export function initNavigation(callbacks = {}) {
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  
+  navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      const pageId = link.dataset.page;
-
-      window.location.hash = `#${pageId}`;
-
-      // Hide all sections
-      pages.forEach(page => {
-    page.classList.add('hidden');
-    page.classList.remove('active');
-  });
-
-      // Show selected section
-      const activeSection = document.getElementById(pageId);
-      if (activeSection) {
-        activeSection.classList.remove('hidden');
-        activeSection.classList.add('active');
-      }
-
-      // Special behavior for favorites
-      if (pageId === 'favorites') {
-        favoritesView.renderFavorites();
+      const page = link.dataset.page;
+      
+      // Ocultar todas las páginas
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.add('hidden');
+      });
+      
+      // Mostrar la página seleccionada
+      const targetPage = document.getElementById(page);
+      if (targetPage) {
+        targetPage.classList.remove('hidden');
+        
+        // Ejecutar callback específico si existe
+        if (page === 'stats' && callbacks.loadOceanStats) {
+          callbacks.loadOceanStats();
+        } else if (page === 'favorites' && callbacks.showFavorites) {
+          callbacks.showFavorites();
+        }
       }
     });
   });

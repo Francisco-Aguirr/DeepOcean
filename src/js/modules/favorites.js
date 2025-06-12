@@ -1,9 +1,23 @@
-
 const FAVORITES_KEY = 'deepocean-favorites';
 
 export default class Favorites {
   constructor() {
     this.favorites = this.loadFavorites();
+    this.subscribers = []; // Array para almacenar las funciones callback
+  }
+
+  // Método para suscribirse a cambios
+  subscribe(callback) {
+    this.subscribers.push(callback);
+    // Retornar función para desuscribirse
+    return () => {
+      this.subscribers = this.subscribers.filter(sub => sub !== callback);
+    };
+  }
+
+  // Método para notificar a los suscriptores
+  notifySubscribers() {
+    this.subscribers.forEach(callback => callback(this.favorites));
   }
 
   loadFavorites() {
@@ -19,6 +33,7 @@ export default class Favorites {
   saveFavorites() {
     try {
       localStorage.setItem(FAVORITES_KEY, JSON.stringify(this.favorites));
+      this.notifySubscribers(); // Notificar después de guardar
     } catch (error) {
       console.error('Failed to save favorites to localStorage:', error);
     }
@@ -42,7 +57,7 @@ export default class Favorites {
   }
 
   getFavorites() {
-    return this.favorites;
+    return [...this.favorites]; // Devolver copia para evitar mutaciones externas
   }
 
   clearAllFavorites() {

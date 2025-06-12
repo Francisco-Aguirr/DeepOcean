@@ -1,0 +1,8 @@
+{
+  "stats": [
+    { "title": "Earth Covered by Oceans", "value": "71%", "description": "The oceans cover about 71% of the Earth's surface." },
+    { "title": "Known Marine Species", "value": "230,000+", "description": "There are more than 230,000 known species living in the ocean." },
+    { "title": "Average Ocean Depth", "value": "3,688 m", "description": "The average depth of the oceans is 3,688 meters." },
+    { "title": "Plastic Waste in Oceans", "value": "8 million tons/year", "description": "An estimated 8 million tons of plastic enter the oceans annually." }
+  ]
+}

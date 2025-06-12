@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "question": "Which ocean is the largest?",
+      "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": "Pacific"
+    },
+    {
+      "question": "What percentage of the Earth's surface is covered by oceans?",
+      "options": ["50%", "71%", "85%", "60%"],
+      "answer": "71%"
+    },
+    {
+      "question": "Which marine animal is the largest?",
+      "options": ["Great White Shark", "Blue Whale", "Giant Squid", "Orca"],
+      "answer": "Blue Whale"
+    },
+    {
+      "question": "What is the average depth of the ocean?",
+      "options": ["1.2 km", "3.7 km", "5.4 km", "2.5 km"],
+      "answer": "3.7 km"
+    },
+    {
+      "question": "Which ocean current helps regulate Europe's climate?",
+      "options": ["Gulf Stream", "Kuroshio Current", "California Current", "Antarctic Circumpolar Current"],
+      "answer": "Gulf Stream"
+    },
+    {
+      "question": "What is the largest coral reef system in the world?",
+      "options": ["Red Sea Coral Reef", "New Caledonia Barrier Reef", "Great Barrier Reef", "Mesoamerican Barrier Reef"],
+      "answer": "Great Barrier Reef"
+    },
+    {
+      "question": "Which zone of the ocean is completely dark?",
+      "options": ["Sunlight Zone", "Twilight Zone", "Midnight Zone", "Abyssal Zone"],
+      "answer": "Midnight Zone"
+    },
+    {
+      "question": "How much of the ocean has been explored?",
+      "options": ["5%", "20%", "50%", "80%"],
+      "answer": "5%"
+    },
+    {
+      "question": "What is the main gas dissolved in ocean water?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+      "answer": "Carbon Dioxide"
+    },
+    {
+      "question": "Which marine creature can change its gender?",
+      "options": ["Clownfish", "Dolphin", "Great White Shark", "Octopus"],
+      "answer": "Clownfish"
+    },
+    {
+      "question": "What is the saltiest ocean?",
+      "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": "Atlantic"
+    },
+    {
+      "question": "Which of these is not a type of whale?",
+      "options": ["Narwhal", "Beluga", "Dugong", "Orca"],
+      "answer": "Dugong"
+    },
+    {
+      "question": "What is the deepest known point in the ocean?",
+      "options": ["Puerto Rico Trench", "Java Trench", "Mariana Trench", "Tonga Trench"],
+      "answer": "Mariana Trench"
+    },
+    {
+      "question": "Which marine animal has the largest brain?",
+      "options": ["Blue Whale", "Giant Squid", "Sperm Whale", "Dolphin"],
+      "answer": "Sperm Whale"
+    },
+    {
+      "question": "What is the primary cause of ocean currents?",
+      "options": ["Moon's gravity", "Wind patterns", "Earth's rotation", "All of the above"],
+      "answer": "All of the above"
+    },
+    {
+      "question": "Which of these sharks is not dangerous to humans?",
+      "options": ["Tiger Shark", "Whale Shark", "Bull Shark", "Great White Shark"],
+      "answer": "Whale Shark"
+    },
+    {
+      "question": "What is the main threat to coral reefs?",
+      "options": ["Overfishing", "Ocean acidification", "Climate change", "All of the above"],
+      "answer": "All of the above"
+    },
+    {
+      "question": "How many species live in coral reefs?",
+      "options": ["About 1,000", "About 10,000", "About 100,000", "About 1 million"],
+      "answer": "About 1 million"
+    },
+    {
+      "question": "What is bioluminescence in marine life used for?",
+      "options": ["Attracting prey", "Communication", "Camouflage", "All of the above"],
+      "answer": "All of the above"
+    },
+    {
+      "question": "Which fish holds the record for deepest living fish ever observed?",
+      "options": ["Anglerfish", "Snailfish", "Viperfish", "Barreleye"],
+      "answer": "Snailfish"
+    }
+  ]
+}
