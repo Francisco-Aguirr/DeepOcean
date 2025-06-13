@@ -1,31 +1,44 @@
 // src/js/modules/statsView.js
+// este codigo hay que corregirlo p volver a la version anterior porque ya no funciona ni en local
+// Importación correcta del archivo de estadísticas
+import oceanStats from '../../../public/data/oceanStats.json';
 
-export default async function loadOceanStats() {
+export default function loadOceanStats() {
   const statsSection = document.getElementById('stats-container');
-  statsSection.innerHTML = `<p>Loading ocean stats...</p>`;
+  
+  // Mostrar estado de carga
+  statsSection.innerHTML = `<p class="loading-message">Loading ocean stats...</p>`;
 
   try {
-    const response = await fetch('/src/data/oceanStats.json');
-    if (!response.ok) throw new Error('Failed to load ocean stats data.');
+    // Validar que los datos existen y tienen la estructura correcta
+    if (!oceanStats?.stats || !Array.isArray(oceanStats.stats)) {
+      throw new Error('Invalid data format');
+    }
 
-    const data = await response.json();
-
-    const statsHtml = data.stats.map(stat => `
+    // Generar el HTML de las tarjetas
+    const statsHtml = oceanStats.stats.map(stat => `
       <div class="stats-card">
-        <h3>${stat.title}</h3>
-        <p><strong>${stat.value}</strong></p>
-        <p>${stat.description}</p>
+        <h3>${stat.title || 'No title'}</h3>
+        <p><strong>${stat.value || 'N/A'}</strong></p>
+        ${stat.description ? `<p>${stat.description}</p>` : ''}
       </div>
     `).join('');
 
-    statsSection.innerHTML = `
+    // Insertar en el DOM
+    statsSection.innerHTML = statsHtml ? `
       <div class="stats-grid">
         ${statsHtml}
       </div>
-    `;
+    ` : '<p>No statistics available</p>';
 
   } catch (error) {
-    statsSection.innerHTML = `<p>Error loading data: ${error.message}</p>`;
-    console.error(error);
+    // Manejo de errores mejorado
+    statsSection.innerHTML = `
+      <div class="error-message">
+        <p>⚠️ Error loading ocean data</p>
+        <p>${error.message}</p>
+      </div>
+    `;
+    console.error('Ocean stats loading error:', error);
   }
 }
